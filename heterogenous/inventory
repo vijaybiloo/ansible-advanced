@@ -1,0 +1,5 @@
+[centos]
+ansible_user=centos
+
+[ubuntu]
+ansible_user=ubuntu

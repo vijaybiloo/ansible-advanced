@@ -1,0 +1,26 @@
+- name: Demo on filters
+  hosts: localhost
+  vars:
+    NAME: Vijay Deepak
+    website: https://github.com/vijaybiloo
+    Greeting: Hello Krishna, How are you 
+  tasks:
+  - name: convert into upper case
+    debug:
+      msg: "Hello {{ NAME | upper }}"
+
+  - name: convert into lower case
+    debug:
+      msg: "Hello {{ NAME | lower }}"
+
+  - name: print the course name # or Undefined variable
+    debug:
+      msg: "{{ COURSE | default ('DevOps') }}"
+
+  - name: extract hostname
+    debug:
+      msg: "{{ website | urlsplit('hostname') }}"
+
+  - name: split
+    debug:
+      msg: "{{ Greeting | split(',') }}"
